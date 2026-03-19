@@ -1,6 +1,7 @@
 <!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RIO TOCANTINS ROLEPLAY</title>
   <style>
     body {
@@ -19,6 +20,13 @@
 
 .container {
   padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+img {
+  width: 300px;
+  border-radius: 15px;
 }
 
 button {
@@ -29,6 +37,7 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 10px;
+  margin: 5px;
 }
 
 button:hover {
@@ -39,7 +48,7 @@ button:hover {
   background: #1a1a1a;
   padding: 20px;
   margin: 20px auto;
-  width: 300px;
+  width: 100%;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
@@ -54,10 +63,12 @@ footer {
 </head>
 <body><header>
   🌊 RIO TOCANTINS ROLEPLAY 🌊
-</header><div class="container">  <img src="logo.png" alt="RIO TOCANTINS ROLEPLAY" style="width:300px; border-radius:15px; margin-bottom:20px;">  <h1>Bem-vindo ao RIO TOCANTINS RP</h1>
+</header><div class="container">  <img src="logo.png" alt="logo">  <h1>Bem-vindo ao RIO TOCANTINS RP</h1>
   <p>Entre agora e viva sua história no melhor Roleplay!</p>  <a href="samp://51.222.156.246:7378">
     <button>🎮 Conectar ao Servidor</button>
-  </a>  <div class="card">
+  </a><button onclick="copiarIP()">📋 Copiar IP</button>
+
+  <div class="card">
     <h2>Status do Servidor</h2>
     <p id="status">Carregando...</p>
   </div>  <div class="card">
@@ -70,13 +81,17 @@ footer {
     <a href="https://discord.gg/yv5TqTwzTf" target="_blank">
       <button>💬 Discord</button>
     </a>
-    <br><br>
     <a href="https://chat.whatsapp.com/BwpOozF2F4S5PvliPPnJy4?mode=wwt" target="_blank">
       <button>📱 WhatsApp</button>
     </a>
   </div></div><footer>
   © 2026 RIO TOCANTINS ROLEPLAY
 </footer><script>
+function copiarIP() {
+  navigator.clipboard.writeText("51.222.156.246:7378");
+  alert("IP copiado!");
+}
+
 fetch("https://api.mcsrvstat.us/2/51.222.156.246:7378")
 .then(res => res.json())
 .then(data => {
@@ -88,4 +103,4 @@ fetch("https://api.mcsrvstat.us/2/51.222.156.246:7378")
   }
 });
 </script></body>
-           </html>
+</html>
